@@ -23,14 +23,15 @@ let ArrayNum2 = [
 personagemAtual = "Jaime II"
 //----------------------------------
 const imgs = [
-    "./diversos/imagens/dia.jpg"
+    "../diversos/imagens/dia.jpg"
 ]
-let body = document.getElementsByTagName('body')
-let botao = document.querySelector("#botao")
+let body = document.body
+let botao = document.getElementById("botao")
 
 botao.addEventListener("click", acaon)
 function acaon(){
-    body.style.backgroundImage = dia
+    body.style.backgroundImage = `url('${imgs[0]}')`
+
 }
 
 //----------------------------------
