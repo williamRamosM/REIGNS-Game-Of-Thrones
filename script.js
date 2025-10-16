@@ -21,6 +21,19 @@ let ArrayNum2 = [
 ]
 
 personagemAtual = "Jaime II"
+//----------------------------------
+const imgs = [
+    "./diversos/imagens/dia.jpg"
+]
+let body = document.getElementsByTagName('body')
+let botao = document.querySelector("#botao")
+
+botao.addEventListener("click", acaon)
+function acaon(){
+    body.style.backgroundImage = dia
+}
+
+//----------------------------------
 
 let pularHistoria = prompt ("[1] > Nao pular < \n" +
   "[2] pular \n" +
