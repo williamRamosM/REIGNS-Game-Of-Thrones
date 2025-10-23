@@ -6,9 +6,15 @@ const imgs = [
     "../diversos/imagens/demonio.png"
 ]
 let body = document.body
-let botao = document.getElementById("botao")
+let botao2 = document.getElementById("botao2")
+let a = document.getElementById("abrirAbaCreditos")
 
-botao.addEventListener("click", acaon)
+botao2.addEventListener("click", abrirCerditos)
+
+function abrirCerditos(){
+    location.href = "../html/creditos.html"
+}
+
 function acaon(){
 
     cont++
