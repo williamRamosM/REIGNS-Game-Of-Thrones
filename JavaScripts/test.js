@@ -6,15 +6,24 @@ const imgs = [
     "../diversos/imagens/demonio.png"
 ]
 let body = document.body
-let botao2 = document.getElementById("botao2")
+let botaoStart = document.getElementById("botaoStart")
+let botaoCreditos = document.getElementById("botaoCreditos")
 let a = document.getElementById("abrirAbaCreditos")
 
-botao2.addEventListener("click", abrirCerditos)
+botaoStart.addEventListener("click", abrirGame)
+botaoCreditos.addEventListener("click", abrirCerditos)
+
+// Funcoes de (botoes) menu
+
+function abrirGame(){
+    location.href = "../html/game.html"
+}
 
 function abrirCerditos(){
     location.href = "../html/creditos.html"
 }
 
+// Retirar depois ->
 function acaon(){
 
     cont++
