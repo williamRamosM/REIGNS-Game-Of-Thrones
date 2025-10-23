@@ -1,7 +1,9 @@
 let cont = 0;
 let numImg = 0;
 const imgs = [
-    "../diversos/imagens/dia.jpg"
+    "../diversos/imagens/dia.jpg",
+    "../diversos/imagens/noite.png",
+    "../diversos/imagens/demonio.png"
 ]
 let body = document.body
 let botao = document.getElementById("botao")
