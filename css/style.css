@@ -30,9 +30,8 @@ button{
 }
 
 #imgTitulo{
-    padding: 20px 320px 200px 40px;
-    position: absolute;
-    top: 15px;
-    left: 420px;
+    width: 40%;
+    height: auto;
+    margin-left: 420px;
 }
 

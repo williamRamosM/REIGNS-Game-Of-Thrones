@@ -1,0 +1,42 @@
+body{
+    background-image: url(../diversos/imagens/credito.gif);
+    background-attachment: fixed;
+    background-size:1540px 750px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+h1{
+    padding: 140px 0px 0px 350px ;
+    font-size: 38px;
+}
+
+.autor{
+    font: bold 17px/1.5em "Times New Roman", serif;
+    position: fixed;
+    left: 365px;
+}
+
+.regularLocalName{
+    position: fixed;
+    left: 700px;
+    top: 200px;
+}
+
+#autorW{
+    font: bold 15px/1.5em "Times New Roman", Arial;
+    position: fixed;
+    left: 700px;
+    top: 230px;
+
+    visibility: hidden;
+}
+
+#autorJ{
+    font: bold 15px/1.5em "Times New Roman", Arial;
+    position: fixed;
+    left: 700px;
+    top: 230px;
+
+    visibility: hidden;
+}

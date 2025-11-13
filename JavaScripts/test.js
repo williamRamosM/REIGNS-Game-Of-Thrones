@@ -10,18 +10,6 @@ let botaoStart = document.getElementById("botaoStart")
 let botaoCreditos = document.getElementById("botaoCreditos")
 let a = document.getElementById("abrirAbaCreditos")
 
-botaoStart.addEventListener("click", abrirGame)
-botaoCreditos.addEventListener("click", abrirCerditos)
-
-// Funcoes de (botoes) menu
-
-function abrirGame(){
-    location.href = "../html/game.html"
-}
-
-function abrirCerditos(){
-    location.href = "../html/creditos.html"
-}
 
 // Retirar depois ->
 function acaon(){
@@ -39,3 +27,32 @@ function acaon(){
     }
     body.style.backgroundImage = `url('${imgs[numImg]}')`
 }
+
+
+let botaoVoltar = document.getElementById('botaoVoltar')
+
+let botaoAutorW = document.getElementById('botaoAutorW')
+let botaoAutorJ = document.getElementById('botaoAutorJ')
+
+let divAutorWill  = document.getElementById('autorW')
+let divAutorJose  = document.getElementById('autorJ')
+
+
+botaoAutorW.addEventListener("click", function() {
+    let visible = document.getElementById("autorW").style.visibility;
+    if (visible === "hidden") {
+        divAutorWill.style.visibility = "visible";
+        divAutorJose.style.visibility = "hidden";
+    } else {
+        divAutorWill.style.visibility = "hidden";
+    }
+});
+botaoAutorJ.addEventListener("click", function() {
+    let visible2 = document.getElementById("autorJ").style.visibility;
+    if (visible2 === "hidden") {
+        divAutorJose.style.visibility = "visible";
+        divAutorWill.style.visibility = "hidden";
+    } else {
+        divAutorJose.style.visibility = "hidden";
+    }
+});
