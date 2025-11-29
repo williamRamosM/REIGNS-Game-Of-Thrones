@@ -166,7 +166,7 @@ let musicaP = document.getElementById("musicaPers")
 escolherPersonagem()
 
 function escolherPersonagem(){
-    let aleatorio = Math.floor(Math.random()*10 - 1)
+    let aleatorio = Math.floor(Math.random()*10)
     personagemEscolhido(aleatorio)
 }
 
