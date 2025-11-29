@@ -157,3 +157,22 @@ let ArrayNum2 = [
     maliketh
     
 ]
+
+let nomeP = document.getElementById("nomePers")
+let fotoP = document.getElementById("fotoPers")
+let fundoP = document.getElementById("imgFundoId")
+let musicaP = document.getElementById("musicaPers")
+
+escolherPersonagem()
+
+function escolherPersonagem(){
+    let aleatorio = Math.floor(Math.random()*10 - 1)
+    personagemEscolhido(aleatorio)
+}
+
+function personagemEscolhido(personagem) {
+    nomeP.textContent = ArrayNum2[personagem].nome;
+    fotoP.src = ArrayNum2[personagem].foto;
+    fundoP.body.style.backgroundImage = ArrayNum2[personagem].fundo;
+    musicaP = ArrayNum2[personagem].musica;
+}

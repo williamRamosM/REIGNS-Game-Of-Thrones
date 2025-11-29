@@ -1,0 +1,21 @@
+#nomePers{
+    position: fixed;
+    font: bold 14px/1.5 Georgia, "Times New Roman", Times, serif;
+    color: black;
+    width: 20%;
+    height: auto;
+    top: 55%;
+    left: 47%;
+}
+
+#fotoPers {
+    position: fixed;
+    top: 10%;
+    left: 12%;
+    width: 20%;
+    height: auto;
+    margin-left: 420px;
+}
+#imgFundoId{
+
+}
