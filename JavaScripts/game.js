@@ -199,7 +199,7 @@ function escolherPersonagem() {
         personagemEscolhido(Number(salvo));
     } else {
         sistemEscolha = 0
-        aleatorio = Math.floor(Math.random()*10 -1);
+        aleatorio = Math.floor(Math.random()*10);
         localStorage.setItem("personagemSalvo", aleatorio);
         personagemEscolhido(aleatorio);
     }
@@ -860,4 +860,7 @@ function sistemaDialogosAndAcontecimentos(numero) {
 
     }
     return text
+
+    //--------
+
 }
