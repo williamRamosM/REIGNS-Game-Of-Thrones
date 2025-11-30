@@ -76,7 +76,7 @@
 }
 #nombreRei{
     bottom: 9%;
-    right: 90.50%;
+    right: 87%;
 }
 
 #btEscolhaLeft{
@@ -91,4 +91,80 @@
     width: 8%;
     bottom: 20%;
     right: 38%;
+}
+
+#startAndReset button{
+    position: fixed;
+    font: bold 14px/1.5 Georgia, "Times New Roman", Times, serif;
+    z-index: 99999999;
+    border: black ridge 4px;
+    border-radius: 10px;
+    width: 12%;
+    height: 7%;
+
+}
+
+#restart{
+    display: none;
+    top: 33%;
+    left: 13%;
+}
+
+#start{
+    top: 70%;
+    left: 40%;
+    display: none;
+}
+
+#confirmarName{
+    top: 50%;
+    left: 14%;
+    display: none;
+}
+
+#digName{
+    position: fixed;
+    width: 20%;
+    top: 40%;
+    left: 10%;
+    display: none;
+}
+#imgMetreTemp{
+    position: fixed;
+    width: 20%;
+    height: 45%;
+    top: 20%;
+    left: 70%;
+    border: black ridge 4px;
+    border-radius: 10px;
+}
+
+#dialogMestreTemp{
+    position: fixed;
+    width: 25%;
+    height: 40%;
+    top: 25%;
+    left: 40%;
+    border: black ridge 4px;
+    border-radius: 10px;
+
+}
+#nomeDoMDT{
+    position: fixed;
+    top: 18%;
+    left: 47%;
+}
+#informName{
+    position: fixed;
+    top: 35%;
+    left: 10%;
+    display: none;
+}
+
+#nameGameOver{
+    position: fixed;
+    font: bold 50px/1.5 Georgia, "Times New Roman", Times, serif;
+    top: 13%;
+    left: 8%;
+    display: none;
 }

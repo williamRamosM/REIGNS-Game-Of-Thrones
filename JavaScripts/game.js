@@ -133,28 +133,27 @@ const maliketh = {
 
 let arrayNum2 = [
 
-    espirito,
     arcebispo,
     general,
     freira,
     rex,
     conselheiro,
     lula,
-    diabo,
-    portaDupla,
-    porta,
-    salaBau,
-    portaChefe,
-    portaChefao,
-    malenia,
-    godfrey,
-    morgott,
-    radahn,
-    mohg,
-    maliketh
+    diabo
+    // portaDupla,
+    // porta,
+    // salaBau,
+    // portaChefe,
+    // portaChefao,
+    // malenia,
+    // godfrey,
+    // morgott,
+    // radahn,
+    // mohg,
+    // maliketh
     
 ]
-
+let divGame = document.getElementById("game");
 let nomeP = document.getElementById("nomePers")
 let fotoP = document.getElementById("fotoPers")
 let fundoP = document.getElementById("imgFundoId")
@@ -162,6 +161,9 @@ let musicaP = document.getElementById("musicaPers")
 
 let botaoLeft = document.getElementById("btEscolhaLeft")
 let botaoRight = document.getElementById("btEscolhaRight")
+let botaoRestart = document.getElementById("restart")
+let botaoStart = document.getElementById("start")
+let botaoConfirm = document.getElementById("confirmarName")
 
 let igrejaPag = document.getElementById("igreja")
 let riquesaPag = document.getElementById("riquesa")
@@ -171,18 +173,31 @@ let anoPag = document.getElementById("ano")
 let nomeReiPag = document.getElementById("nombreRei")
 let reinadoPag = document.getElementById("reinado")
 
+let falasMDT = document.getElementById("dialogMestreTemp")
+let informNamePag = document.getElementById("informName")
+let imgMDT = document.getElementById("imgMetreTemp")
+let digNamePag = document.getElementById("digName")
+let nomeMDT = document.getElementById("nomeDoMDT")
+let nameGameOverPag = document.getElementById("nameGameOver")
+
 let igreja = 10
 let riquesa = 10
 let exercito = 10
 let povo = 10
 let ano = 515
 let reinado = 0
+let vida = true
+
+let personagemAtual = nomeReiPag
 
 let sistemEscolha = 0
 let aleatorio = 0
+let final = ""
+let verifStart = false
+let verifSitDeFalas = 0
 
-escolherPersonagem()
-atualizarStatus()
+sistemaFalasForMDT()
+sistemaDeVerifStart()
 
 botaoLeft.addEventListener("click", function(){
     decissaoDoReiLeft()
@@ -194,6 +209,33 @@ botaoRight.addEventListener("click", function(){
     localStorage.clear()
 })
 
+botaoRestart.addEventListener("click", function(){
+    location.reload()
+})
+
+botaoStart.addEventListener("click", function(){
+    verifStart = true
+    verifSitDeFalas = 3
+    botaoStart.style.display = "none"
+    localStorage.clear()
+    sistemaFalasForMDT()
+})
+
+botaoConfirm.addEventListener("click", function(){
+
+    if(digNamePag.value === ""){
+
+    }
+    else{
+        informNamePag.style.display = "none"
+        digNamePag.style.display = "none"
+        botaoConfirm.style.display = "none"
+        nomeReiPag.innerText = digNamePag.value
+        verifSitDeFalas += 1
+        sistemaFalasForMDT()
+    }
+})
+
 function escolherPersonagem() {
 
     let salvo = localStorage.getItem("personagemSalvo");
@@ -202,7 +244,7 @@ function escolherPersonagem() {
         personagemEscolhido(Number(salvo));
     } else {
         sistemEscolha = 0
-        aleatorio = Math.floor(Math.random()*10);
+        aleatorio = Math.floor(Math.random()*6);
         localStorage.setItem("personagemSalvo", aleatorio);
         personagemEscolhido(aleatorio);
     }
@@ -244,6 +286,9 @@ function atualizarStatus(){
     else{
         reinadoPag.innerText = reinado+" anos no reinado"
     }
+
+    sistemaVerificarSituacao(exercito, igreja, riquesa, povo)
+    verificarSitDeVida()
 }
 
 function sistemaDialogosAndAcontecimentos(numero) {
@@ -873,4 +918,216 @@ function sistemaDialogosAndAcontecimentos(numero) {
 
     //--------
 
+}
+
+function sistemaVerificarSituacao(exercito, igreja, riquesa, povo ){
+    let text = ""
+
+    if(exercito <= 0){
+        text = text+`${arrayNum2[2]}: Nosso exército está muito fraco ${personagemAtual},
+    o exército francês soube da nossa situção e veio nos conquistar.
+    ESTAMOS MORTOS!
+    ${personagemAtual}: OQUE?!`
+        final = final+`${personagemAtual} morreu por invasão.`
+        vida = false
+    }
+    else if(exercito >= 20){
+        text = text+`${arrayNum2[2]}: Estamos em uma situação peculiar senhor
+  ${personagemAtual}, acho que o seu reinado não está muito bom, mesmo que o
+  exército esteja poderoso. Eu vou fazer uma mudança nessa reino, graças aos
+  investimentos que tu fez em meus homens. Foi bom ser seu general,
+  bom até agora
+  ${personagemAtual}: OQUE?!`
+
+        final = final+`${personagemAtual} morreu por golpe do exército`
+        vida = false
+    }
+    else if(igreja <= 0){
+        text = text+`${arrayNum2[1]}: ${personagemAtual}! COMO OUSA DESRESPEITARMOS?!
+    O DIABO VIRÁ ATRÁS DE NÓS POR CULPA SUA, SE NÃO AGIRMOS RÁPIDO!
+    TU VAI QUEIMAR PELO BEM DE NOSSO REINO E DEUS, QUEIME NO INFERNO!
+    ${personagemAtual}: OQUE?!`
+        final = final+`${personagemAtual} morreu por desespero da igreja em se proteger de alguém se importava com a ameaça do diabo`
+        vida = false
+    }
+    else if(igreja >= 20){
+        text = text+`${arrayNum2[1]}: ${personagemAtual}. Nossa religião prevaleceu muito,
+    agradeço pela sua colaboração, mas tu não é puro, sei de muitas
+    coisas que fez reinando e até antes de reinar. Eu me declaro novo
+    chefe do reino por enquanto, e irei colocar um novo rei, só que puro.
+    ${personagemAtual}: OQUE?!`
+        final = final+`${personagemAtual} morreu por dominância da igreja, os fazendo querer transformar o clero na predominância`
+        vida = false
+    }
+
+    else if(riquesa <= 0){
+        text = text+`${arrayNum2[7]}: — Majestade… ou melhor, antigo senhor destas terras… Hoje não venho pedir, venho falar a verdade que o povo sussurra nas feiras e nos campos. O reino está morrendo. E não foi pela seca, nem pela praga, nem pelo inimigo estrangeiro. Foi pelo seu comando.
+
+Enquanto o povo pobre passava fome e frio, vosmecê mandava os guardas baterem às portas de madrugada, levando homens, mulheres e até jovens sem crime provado. Chamava isso de “ordem”, mas era apenas medo disfarçado. E medo não enche barriga, não educa criança, não cura doença.
+
+Nós gritamos por pão, e recebemos açoite. Pedimos escolas, e ganhamos mais soldados. Queríamos curar os males do reino, mas vosmecê preferiu amarrar-nos com correntes.
+
+E o pior, Majestade… o pior é que vosmecê sabia que esse caminho só levaria à ruína. Pois quando se governa apenas com ferro e fogo, cedo ou tarde, o povo deixa de temer… e começa a se rebelar.
+
+Hoje, o campo inteiro se junta nesta praça. Não viemos para coroá-lo, mas para julgá-lo. E o julgamento foi feito, não por nobres em tronos de ouro, mas por lavradores, ferreiros, costureiras… e o veredito é um só: o senhor traiu o reino.
+
+Assim, por tamanho erro e por tamanha tirania, vosmecê será enforcado, para que sirva de lição a todos os que um dia pensarem que o poder é mais importante que o povo. Que o seu fim seja o aviso: nenhum rei é maior que a justiça.
+${personagemAtual}: OQUE?!`
+        final = final+`${personagemAtual} morreu por revolução que o povo fez devido a crise financeira do reino`
+        vida = false
+    }
+
+    else if(riquesa >= 20){
+        text = text+`${arrayNum2[7]}: — Majestade… ou devo chamá-lo de colecionador de moedas alheias?
+
+Durante anos, vosmecê discursou sobre honra, transparência e lealdade ao reino. Nós acreditamos. Nós marchamos ao seu lado nas festas, batemos palmas nos discursos e até defendemos seu nome nas tavernas.
+
+Mas agora a verdade veio à tona — e não foi pelas suas palavras, mas pelo som do ouro caindo no chão. Descobrimos salas secretas, cofres abarrotados, galerias escondidas sob o palácio. Uma fortuna incalculável, tão grande que nem mesmo três reinados dariam conta de gastar.
+
+E para quê? Não era para fortalecer o reino, não era para construir pontes ou escolas, nem para proteger nossas fronteiras. Era para se empilhar ouro sobre ouro, moedas sobre moedas, apenas para o prazer de possuir. O senhor não guardava para o povo, guardava de nós.
+
+O trono não é um cofre, Majestade. A coroa não é uma senha de acesso à riqueza. O rei é um guardião, não um acumulador. Mas vosmecê confundiu seu dever com seu desejo, e seu desejo se tornou maior do que a própria coroa.
+
+Hoje o julgamento é público, e a sentença, irrevogável. Não é só o ouro que será devolvido ao reino; o senhor também devolverá sua vida, pois não há crime maior do que trair a confiança de todos aqueles que lhe chamavam de líder.
+
+A forca está erguida, o carrasco espera. Que o último som que ouça não seja o tilintar das moedas, mas o eco das vozes que um dia acreditaram no senhor. Pois a justiça não mede riqueza — mede caráter, e o seu foi vendido pelo peso do ouro.
+${personagemAtual}: OQUE?!`
+        final = final+`${personagemAtual} morreu por invasão do povo por acumular riquesas`
+        vida = false
+    }
+    else if(povo <= 0){
+        text = text+`${arrayNum2[7]}: — Majestade… ou devo chamá-lo de colecionador de moedas alheias?
+
+Durante anos, vosmecê discursou sobre honra, transparência e lealdade ao reino. Nós acreditamos. Nós marchamos ao seu lado nas festas, batemos palmas nos discursos e até defendemos seu nome nas tavernas.
+
+Mas agora a verdade veio à tona — e não foi pelas suas palavras, mas pelo som do ouro caindo no chão. Descobrimos salas secretas, cofres abarrotados, galerias escondidas sob o palácio. Uma fortuna incalculável, tão grande que nem mesmo três reinados dariam conta de gastar.
+
+E para quê? Não era para fortalecer o reino, não era para construir pontes ou escolas, nem para proteger nossas fronteiras. Era para se empilhar ouro sobre ouro, moedas sobre moedas, apenas para o prazer de possuir. O senhor não guardava para o povo, guardava de nós.
+
+O trono não é um cofre, Majestade. A coroa não é uma senha de acesso à riqueza. O rei é um guardião, não um acumulador. Mas vosmecê confundiu seu dever com seu desejo, e seu desejo se tornou maior do que a própria coroa.
+
+Hoje o julgamento é público, e a sentença, irrevogável. Não é só o ouro que será devolvido ao reino; o senhor também devolverá sua vida, pois não há crime maior do que trair a confiança de todos aqueles que lhe chamavam de líder.
+
+A forca está erguida, o carrasco espera. Que o último som que ouça não seja o tilintar das moedas, mas o eco das vozes que um dia acreditaram no senhor. Pois a justiça não mede riqueza — mede caráter, e o seu foi vendido pelo peso do ouro.
+${personagemAtual}: OQUE?!`
+        final = final+`${personagemAtual} morreu por raiva do povo em relação a confiança com ele`
+        vida = false
+    }
+    else if (povo >= 20){
+
+        text = text+`${arrayNum2[7]}: — Majestade… até ontem, se alguém ousasse levantar um dedo contra o senhor, seria chamado de louco. O povo o amava, o reverenciava, acreditava que sua palavra era lei e seu coração, puro.
+
+E por um tempo, eu também acreditei. Eu o vi sorrir nas festas, caminhar entre os camponeses, abraçar crianças, prometer dias melhores. O senhor construiu a imagem perfeita: um rei que não se afasta do seu povo.
+
+Mas, Majestade… quanto mais perfeita a máscara, mais perigosa é a verdade que ela esconde.
+
+Eu observei de perto. Vi como cada aparição pública era cuidadosamente calculada, como cada gesto generoso coincidia com acordos que ninguém via, como cada sorriso abria portas para negócios que beneficiavam poucos e mantinham muitos na sombra.
+
+O senhor não precisava governar pela força, porque governava pela ilusão. Enquanto o povo o aplaudia, não via as cartas sendo jogadas por baixo da mesa. O senhor fez da confiança uma moeda, e gastou-a para comprar silêncio e complacência.
+
+Hoje, não estamos aqui porque o senhor falhou em nos agradar. Estamos aqui porque o senhor nos traiu com um disfarce tão convincente que até os mais sábios se ajoelhavam diante dele. E isso, Majestade, é pior que a tirania aberta: é a tirania mascarada de bondade.
+
+O povo que lhe entregou o coração agora exige sua cabeça. A praça está cheia, não de inimigos declarados, mas de ex-devotos que descobriram que o seu rei perfeito era, na verdade, um mestre das sombras.
+
+A coroa não cairá no chão; ela será arrancada com as próprias mãos daqueles que a sustentaram. E quando o carrasco puxar a corda, não será apenas o seu corpo que cairá… mas o mito que o senhor construiu.
+${personagemAtual}: OQUE?!`
+        final = final+`${personagemAtual} morreu por invasão do povo por supostamente criar uma imagem de santo`
+        vida = false
+    }
+
+    return text
+}
+
+function verificarSitDeVida(){
+    if(vida){
+
+    }
+    else{
+        alert(""+sistemaVerificarSituacao(exercito, igreja, riquesa, povo))
+        alert(""+final)
+        divGame.style.display = "none";
+        document.body.style.backgroundImage = 'url("../diversos/imagens/fundoFimDeJogo.png")';
+        botaoRestart.style.display = "block";
+        nameGameOverPag.style.display = "block";
+    }
+}
+
+//-------------------------Local do start-----------------------------
+
+function sistemaDeVerifStart(){
+
+    if(verifStart){
+        divGame.style.visibility="visible";
+        fundoP.style.visibility="visible";
+    }
+    else{
+        divGame.style.visibility="hidden";
+        document.body.style.backgroundImage = 'url("../diversos/imagens/fundoNuvensStart.png")';
+    }
+}
+
+function sistemaFalasForMDT(){
+
+        if(verifSitDeFalas === 0) {
+            setTimeout(function () {
+                falasMDT.innerText = "Haa... você... que bom velo... " +
+                    "bem... acredito que deve me conhecer não? se não conhece... eu vou lhe diser! " +
+                    "sou o Mestre Do Tempo o guardiao de todos um dos maiores deuses de todos os tempos... " +
+                    "bem... acho que agora voce já me conhece... mas agora...";
+
+            }, 1)
+
+
+            setTimeout(function () {
+                imgMDT.src = "../diversos/imagens/MestreDoTempoLado.png"
+                falasMDT.innerText = "QUAL SERIA O SEU NOME? " +
+                    "poderia me dizer colocando o nome ali do lado... "
+                informNamePag.style.display = "block"
+                digNamePag.style.display = "block"
+                botaoConfirm.style.display = "block"
+
+            }, 6000)
+
+        }
+        else if(verifSitDeFalas === 1) {
+                    setTimeout(function () {
+                    imgMDT.src = "../diversos/imagens/MestreDoTempoParado.png"
+                    falasMDT.innerText = "Ahh.. hmm. sim.. " + digNamePag.value + " seu nome parece familiar.."
+             }, 1)
+
+            setTimeout(function () {
+                imgMDT.src = "../diversos/imagens/MestreDoTempoPreparado.png"
+                falasMDT.innerText = "Hahaha bem... vou te mandar para a terra onde você devera " +
+                    "administarr um reino inteiro, mas tome cuidado com suas açoes!"
+            }, 5000)
+
+            setTimeout(function () {
+                botaoStart.style.display = "block"
+            }, 6000)
+
+        }
+        else if(verifSitDeFalas === 3) {
+            setTimeout(function () {
+                imgMDT.src = "../diversos/imagens/MestreDoTempoRaio.png"
+                falasMDT.innerText = "* Estralos de dedos *"
+            }, 1)
+
+            setTimeout(function () {
+                document.body.style.backgroundImage = 'url("../diversos/imagens/fundoDeErroAnimadoMDT.gif")';
+            }, 800)
+
+            setTimeout(function () {
+                invisibleStart()
+                sistemaDeVerifStart()
+                escolherPersonagem()
+                atualizarStatus()
+            }, 3000)
+
+        }
+} //sas
+
+function invisibleStart() {
+    imgMDT.style.display = "none"
+    falasMDT.style.display = "none"
+    nomeMDT.style.display = "none"
 }
