@@ -4,23 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/game.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>REIGNS - Game</title>
 </head>
-<body>
+<body id = "imgFundoId">
 
 <div id="game">
     <div id="basePersona">
         <p id = "nomePers"></p>
         <img id = "fotoPers" src="">
-        <img id = "imgFundoId" class="imgFundoClass">
         <audio id="musicaPers" autoplay loop></audio>
+    </div>
+    <div id = "inforForPlayer">
+        <p id="igreja">Igreja: 10</p>
+        <p id="riquesa">Riquesa: 10</p>
+        <p id="exercito">Exercito: 10</p>
+        <p id="povo">Povo: 10</p>
+        <p id = "reinado">0 anos no poder</p>
+        <p id = "ano">Ano: 515</p>
+        <p id = "nombreRei">nome</p>
     </div>
     <div id = "dialogoPersonagem">
         <p id = "dialogo"></p>
     </div>
-    <div>
-
+    <div id = "botoesEscolha">
+        <button type="button"  class="btn btn-primary btn-lg" id = "btEscolhaLeft" ><-</button>
+        <button type="button" class="btn btn-secondary btn-lg" id="btEscolhaRight" >-></button>
     </div>
+
 </div>
 
 </body>

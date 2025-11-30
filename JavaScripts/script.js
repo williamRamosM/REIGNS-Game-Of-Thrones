@@ -9,7 +9,7 @@ let vida = "vivo" // mudar para vivo (depois)
 let personagemAtual = ""
 let ano = 1651
 let reinado = 0
-let ArrayNum2 = [
+let arrayNum2 = [
   "O Espírito dos Caídos",
   "Arcebispo",
   "General Conventon",
@@ -58,7 +58,7 @@ else{
 }
 alert("    REIGNS \n" +
   "Game Of Thrones")
-alert(`${ArrayNum2[0]}: Bem-vindo ${personagemAtual}! Agora é sua vez de ser responsável. Eu errei no meu mandato,
+alert(`${arrayNum2[0]}: Bem-vindo ${personagemAtual}! Agora é sua vez de ser responsável. Eu errei no meu mandato,
                               mas acredito que tu vai mudar esse reino para melhor. Boa Sorte. UUUUUHHHHHHHH`)
 //------------------------------------------------------------------------------------
 let exit = 0
@@ -229,12 +229,12 @@ function escolha(num){
 // SISTEMA DE PERSONAGEM ALEATORIO (ACONTECIMENTOS ALEATORIOS PARA O REINO)
 function sistemaAleatoriaPer(numero) {
   sistemEscolha = 0
-  let personagem = ArrayNum2[numero]
+  let personagem = arrayNum2[numero]
   let fecharAcont = 0
   let text = ""
   const dialogoAleatorio = Math.floor(Math.random() * (5 - 1 + 1)) + 1 // trocar depois para (5)
 
-  if (personagem == ArrayNum2[1]) {
+  if (personagem == arrayNum2[1]) {
 
     if (dialogoAleatorio == 1) {
 
@@ -357,7 +357,7 @@ function sistemaAleatoriaPer(numero) {
       }
     }
   }
-  else if (personagem == ArrayNum2[2]) {
+  else if (personagem == arrayNum2[2]) {
 
       if (dialogoAleatorio == 1) {
         while (fecharAcont != 1) {
@@ -468,7 +468,7 @@ function sistemaAleatoriaPer(numero) {
           }
         }
       }
-    } else if (personagem == ArrayNum2[3]) {
+    } else if (personagem == arrayNum2[3]) {
 
       if (dialogoAleatorio == 1) {
         while (fecharAcont != 1) {
@@ -597,7 +597,7 @@ function sistemaAleatoriaPer(numero) {
         }
       }
 
-    } else if (personagem == ArrayNum2[4]) {
+    } else if (personagem == arrayNum2[4]) {
 
       const sorteOuAzar = Math.floor(Math.random() * (8 - 1 + 1)) + 1
 
@@ -662,7 +662,7 @@ function sistemaAleatoriaPer(numero) {
         }
       }
 
-    } else if (personagem == ArrayNum2[5]) {
+    } else if (personagem == arrayNum2[5]) {
 
     if (dialogoAleatorio == 1) {
       while (fecharAcont != 1) {
@@ -785,7 +785,7 @@ function sistemaAleatoriaPer(numero) {
       }
     }
   }
-  else if (personagem == ArrayNum2[6]) {
+  else if (personagem == arrayNum2[6]) {
 
         if (dialogoAleatorio == 1) {
           while (fecharAcont != 1) {
@@ -898,7 +898,7 @@ function sistemaAleatoriaPer(numero) {
           }
         }
 
-      } else if (personagem == ArrayNum2[7]) {
+      } else if (personagem == arrayNum2[7]) {
 
         if (igreja < 10 && povo < 10 && exercito < 10 && riquesa < 10) {
           text = `${personagem}: EU VIM PARA TE LEVAR ${personagemAtual}. Ai meu querido amiguinho, EU VOU ACABAR
@@ -931,7 +931,7 @@ function sistemaAleatoriaPer(numero) {
     let text = ""
 
     if(exercito <= 0){
-      text = text+`${ArrayNum2[2]}: Nosso exército está muito fraco ${personagemAtual},
+      text = text+`${arrayNum2[2]}: Nosso exército está muito fraco ${personagemAtual},
     o exército francês soube da nossa situção e veio nos conquistar.
     ESTAMOS MORTOS!
     ${personagemAtual}: OQUE?!`
@@ -939,7 +939,7 @@ function sistemaAleatoriaPer(numero) {
       vida = "morto"
     }
     else if(exercito >= 20){
-      text = text+`${ArrayNum2[2]}: Estamos em uma situação peculiar senhor
+      text = text+`${arrayNum2[2]}: Estamos em uma situação peculiar senhor
   ${personagemAtual}, acho que o seu reinado não está muito bom, mesmo que o
   exército esteja poderoso. Eu vou fazer uma mudança nessa reino, graças aos
   investimentos que tu fez em meus homens. Foi bom ser seu general,
@@ -950,7 +950,7 @@ function sistemaAleatoriaPer(numero) {
       vida = "morto"
     }
     else if(igreja <= 0){
-      text = text+`${ArrayNum2[1]}: ${personagemAtual}! COMO OUSA DESRESPEITARMOS?!
+      text = text+`${arrayNum2[1]}: ${personagemAtual}! COMO OUSA DESRESPEITARMOS?!
     O DIABO VIRÁ ATRÁS DE NÓS POR CULPA SUA, SE NÃO AGIRMOS RÁPIDO!
     TU VAI QUEIMAR PELO BEM DE NOSSO REINO E DEUS, QUEIME NO INFERNO!
     ${personagemAtual}: OQUE?!`
@@ -958,7 +958,7 @@ function sistemaAleatoriaPer(numero) {
       vida = "morto"
     }
     else if(igreja >= 20){
-      text = text+`${ArrayNum2[1]}: ${personagemAtual}. Nossa religião prevaleceu muito,
+      text = text+`${arrayNum2[1]}: ${personagemAtual}. Nossa religião prevaleceu muito,
     agradeço pela sua colaboração, mas tu não é puro, sei de muitas
     coisas que fez reinando e até antes de reinar. Eu me declaro novo
     chefe do reino por enquanto, e irei colocar um novo rei, só que puro.
@@ -968,7 +968,7 @@ function sistemaAleatoriaPer(numero) {
     }
 
     else if(riquesa <= 0){
-      text = text+`${ArrayNum2[7]}: — Majestade… ou melhor, antigo senhor destas terras… Hoje não venho pedir, venho falar a verdade que o povo sussurra nas feiras e nos campos. O reino está morrendo. E não foi pela seca, nem pela praga, nem pelo inimigo estrangeiro. Foi pelo seu comando.
+      text = text+`${arrayNum2[7]}: — Majestade… ou melhor, antigo senhor destas terras… Hoje não venho pedir, venho falar a verdade que o povo sussurra nas feiras e nos campos. O reino está morrendo. E não foi pela seca, nem pela praga, nem pelo inimigo estrangeiro. Foi pelo seu comando.
 
 Enquanto o povo pobre passava fome e frio, vosmecê mandava os guardas baterem às portas de madrugada, levando homens, mulheres e até jovens sem crime provado. Chamava isso de “ordem”, mas era apenas medo disfarçado. E medo não enche barriga, não educa criança, não cura doença.
 
@@ -985,7 +985,7 @@ ${personagemAtual}: OQUE?!`
     }
 
     else if(riquesa >= 20){
-      text = text+`${ArrayNum2[7]}: — Majestade… ou devo chamá-lo de colecionador de moedas alheias?
+      text = text+`${arrayNum2[7]}: — Majestade… ou devo chamá-lo de colecionador de moedas alheias?
 
 Durante anos, vosmecê discursou sobre honra, transparência e lealdade ao reino. Nós acreditamos. Nós marchamos ao seu lado nas festas, batemos palmas nos discursos e até defendemos seu nome nas tavernas.
 
@@ -1003,7 +1003,7 @@ ${personagemAtual}: OQUE?!`
       vida = "morto"
     }
     else if(povo <= 0){
-      text = text+`${ArrayNum2[7]}: — Majestade… ou devo chamá-lo de colecionador de moedas alheias?
+      text = text+`${arrayNum2[7]}: — Majestade… ou devo chamá-lo de colecionador de moedas alheias?
 
 Durante anos, vosmecê discursou sobre honra, transparência e lealdade ao reino. Nós acreditamos. Nós marchamos ao seu lado nas festas, batemos palmas nos discursos e até defendemos seu nome nas tavernas.
 
@@ -1022,7 +1022,7 @@ ${personagemAtual}: OQUE?!`
     }
     else if (povo >= 20){
 
-      text = text+`${ArrayNum2[7]}: — Majestade… até ontem, se alguém ousasse levantar um dedo contra o senhor, seria chamado de louco. O povo o amava, o reverenciava, acreditava que sua palavra era lei e seu coração, puro.
+      text = text+`${arrayNum2[7]}: — Majestade… até ontem, se alguém ousasse levantar um dedo contra o senhor, seria chamado de louco. O povo o amava, o reverenciava, acreditava que sua palavra era lei e seu coração, puro.
 
 E por um tempo, eu também acreditei. Eu o vi sorrir nas festas, caminhar entre os camponeses, abraçar crianças, prometer dias melhores. O senhor construiu a imagem perfeita: um rei que não se afasta do seu povo.
 

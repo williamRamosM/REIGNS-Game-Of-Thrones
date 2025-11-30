@@ -1,21 +1,94 @@
 #nomePers{
     position: fixed;
     font: bold 14px/1.5 Georgia, "Times New Roman", Times, serif;
-    color: black;
-    width: 20%;
+    text-align: center;
+    color: #ffffff;
+    width: 11%;
     height: auto;
-    top: 55%;
-    left: 47%;
+    top: 63%;
+    left: 44%;
+    border: black ridge 6px;
+    border-radius: 10px;
+    background: #000817;
 }
 
 #fotoPers {
     position: fixed;
-    top: 10%;
+    top: 15%;
     left: 12%;
     width: 20%;
-    height: auto;
+    height: 45%;
     margin-left: 420px;
+    z-index: 1;
+    border: black ridge 6px;
+    border-radius: 10px;
 }
-#imgFundoId{
 
+#imgFundoId{
+    position: fixed;
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
+#igreja,
+#riquesa,
+#exercito,
+#povo,
+#reinado,
+#ano,
+#nombreRei{
+    position: fixed;
+    font: bold 30px/1.5 Georgia, "Times New Roman", Times, serif;
+    color: #ffffff;
+    background: #000817;
+    height: auto;
+    border: black ridge 4px;
+    border-radius: 10px;
+    width: auto;
+
+}
+#igreja{
+    bottom: 85%;
+    right: 65%;
+}
+#riquesa{
+    bottom: 85%;
+    right: 50%;
+}
+#exercito{
+    bottom: 85%;
+    right: 35%;
+}
+#povo{
+    bottom: 85%;
+    right: 23%;
+}
+#reinado{
+    bottom: 20%;
+    right: 78%;
+}
+#ano{
+    bottom: 85%;
+    right: 84%;
+}
+#nombreRei{
+    bottom: 9%;
+    right: 90.50%;
+}
+
+#btEscolhaLeft{
+    position: fixed;
+    width: 8%;
+    bottom: 20%;
+    right: 55%;
+}
+
+#btEscolhaRight{
+    position: fixed;
+    width: 8%;
+    bottom: 20%;
+    right: 38%;
 }
