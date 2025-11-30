@@ -169,17 +169,20 @@ let exercitoPag = document.getElementById("exercito")
 let povoPag = document.getElementById("povo")
 let anoPag = document.getElementById("ano")
 let nomeReiPag = document.getElementById("nombreRei")
+let reinadoPag = document.getElementById("reinado")
 
 let igreja = 10
 let riquesa = 10
 let exercito = 10
 let povo = 10
 let ano = 515
+let reinado = 0
 
 let sistemEscolha = 0
 let aleatorio = 0
 
-escolherPersonagem();
+escolherPersonagem()
+atualizarStatus()
 
 botaoLeft.addEventListener("click", function(){
     decissaoDoReiLeft()
@@ -234,6 +237,13 @@ function atualizarStatus(){
     exercitoPag.innerText = "Exercito: "+exercito
     povoPag.innerText = "Povo: "+povo
     anoPag.innerText = "Ano: " +ano
+
+    if(reinado === 1){
+        reinadoPag.innerText = reinado+" ano no reinado"
+    }
+    else{
+        reinadoPag.innerText = reinado+" anos no reinado"
+    }
 }
 
 function sistemaDialogosAndAcontecimentos(numero) {
