@@ -20,6 +20,8 @@ button{
     position: absolute;
     top: 450px;
     left: 500px;
+
+
 }
 
 #botaoCreditos {
@@ -27,12 +29,15 @@ button{
     position: absolute;
     top: 450px;
     left: 800px;
+
 }
 
 #imgTitulo{
     width: 40%;
     height: auto;
     margin-left: 420px;
+    justify-content: center;
+    position: absolute;
 }
 
 #carregamento {
@@ -60,10 +65,17 @@ button{
     pointer-events: none;   
 }
 #btnStart {
-    padding: 20px 50px;
-    font-size: 24px;
+    width: 200px;             
+    height: 80px;            
+    
+    background-image: url("../diversos/botoes/BotaoEntrar.png");
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+
     cursor: pointer;
-    border: none;
     border-radius: 10px;
+
+    padding: 0;
 }
 

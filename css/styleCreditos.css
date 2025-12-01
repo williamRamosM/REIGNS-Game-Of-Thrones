@@ -1,9 +1,10 @@
 body{
     background-image: url(../diversos/imagens/credito.gif);
     background-attachment: fixed;
-    background-size:1540px 750px;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center ;
+
 }
 
 h1{
