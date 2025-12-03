@@ -132,7 +132,6 @@ const maliketh = {
 }
 
 let arrayNum2 = [
-
     arcebispo,
     general,
     freira,
@@ -223,8 +222,10 @@ botaoStart.addEventListener("click", function(){
 
 botaoConfirm.addEventListener("click", function(){
 
-    if(digNamePag.value === ""){
-
+    if(digNamePag.value.length === 0 || !digNamePag.value.trim()){
+        alert("Mestre Do Tempo: \n" +
+            "\n" +
+            "Você deve colocar um nome de rei que seja valido!")
     }
     else{
         informNamePag.style.display = "none"
