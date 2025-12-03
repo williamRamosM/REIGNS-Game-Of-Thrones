@@ -13,9 +13,12 @@ h1{
 }
 
 .autor{
-    font: bold 17px/1.5em "Times New Roman", serif;
     position: fixed;
+    font: bold 17px/1.5em "Times New Roman", serif;
     left: 365px;
+}
+#nameAutorJ{
+    top: 50%
 }
 
 .regularLocalName{
@@ -25,8 +28,8 @@ h1{
 }
 
 #autorW{
-    font: bold 15px/1.5em "Times New Roman", Arial;
     position: fixed;
+    font: bold 15px/1.5em "Times New Roman", Arial;
     left: 700px;
     top: 230px;
 
@@ -34,10 +37,34 @@ h1{
 }
 
 #autorJ{
-    font: bold 15px/1.5em "Times New Roman", Arial;
     position: fixed;
+    font: bold 15px/1.5em "Times New Roman", Arial;
     left: 700px;
     top: 230px;
 
     visibility: hidden;
+}
+
+#botaoAutorW,
+#botaoAutorJ,
+#botaoVoltar{
+    position: fixed;
+    font: bold 15px/1.5em "Times New Roman", Arial;
+    border: #000817 solid 3px;
+    border-radius: 2px;
+}
+
+#botaoAutorW{
+    left: 24%;
+    top: 45%;
+}
+
+#botaoAutorJ{
+    left: 24%;
+    top: 58%;
+}
+
+#botaoVoltar{
+    left: 24%;
+    top: 70%;
 }

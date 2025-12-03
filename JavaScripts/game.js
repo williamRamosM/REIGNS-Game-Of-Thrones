@@ -187,8 +187,6 @@ let ano = 515
 let reinado = 0
 let vida = true
 
-let personagemAtual = nomeReiPag
-
 let sistemEscolha = 0
 let aleatorio = 0
 let final = ""
