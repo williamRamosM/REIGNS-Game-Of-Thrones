@@ -50,6 +50,13 @@
     width: auto;
 
 }
+
+#voltarMenu{
+    display: none;
+    left: 80%;
+    top: 85%;
+}
+
 #igreja{
     bottom: 85%;
     right: 65%;

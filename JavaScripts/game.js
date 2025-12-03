@@ -163,6 +163,7 @@ let botaoRight = document.getElementById("btEscolhaRight")
 let botaoRestart = document.getElementById("restart")
 let botaoStart = document.getElementById("start")
 let botaoConfirm = document.getElementById("confirmarName")
+let botaoVoltarM = document.getElementById("voltarMenu")
 
 let igrejaPag = document.getElementById("igreja")
 let riquesaPag = document.getElementById("riquesa")
@@ -186,6 +187,8 @@ let povo = 10
 let ano = 515
 let reinado = 0
 let vida = true
+
+let personagemAtual = "";
 
 let sistemEscolha = 0
 let aleatorio = 0
@@ -232,6 +235,25 @@ botaoConfirm.addEventListener("click", function(){
         nomeReiPag.innerText = digNamePag.value
         verifSitDeFalas += 1
         sistemaFalasForMDT()
+    }
+})
+
+botaoVoltarM.addEventListener("click", function(){
+    window.location.href = "../index.html"
+})
+
+document.addEventListener("keypress", function(event){
+    if(event.key === 'Enter'){
+        alert("Guia do Jogo: \n" +
+            "\n" +
+            "Como que joga?: \n" +
+            "- Você deve administrar seu reino escolhendo se sim (esquerda) ou nao (direita) ah tome cuidado \n" +
+            "pois você não pode deixar a baixar de 0 ou aumentar mais do que 20 as estatisticas como (povo, riquesa e dentre outros). \n" +
+            "\n" +
+            "O que faço se morrer?: \n" +
+            "Você pode jogar novamente ou sair para o menu. \n" +
+            "")
+
     }
 })
 
@@ -1058,6 +1080,7 @@ function sistemaDeVerifStart(){
     if(verifStart){
         divGame.style.visibility="visible";
         fundoP.style.visibility="visible";
+        botaoVoltarM.style.display = "block"
     }
     else{
         divGame.style.visibility="hidden";
