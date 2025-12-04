@@ -277,6 +277,7 @@ function escolherPersonagem() {
         aleatorio = Math.floor(Math.random()*6);
         localStorage.setItem("personagemSalvo", aleatorio);
         personagemEscolhido(aleatorio);
+        
     }
 }
 
@@ -290,9 +291,9 @@ function personagemEscolhido(personagem) {
 function decissaoDoReiLeft() {
     localStorage.clear()
     escolherPersonagem();
-    sistemEscolha = 1
-    sistemaDialogosAndAcontecimentos(aleatorio)
-    atualizarStatus()
+    sistemEscolha = 1  
+    sistemaDialogosAndAcontecimentos(aleatorio) 
+    
 }
 
 function decissaoDoReiRight() {
@@ -300,7 +301,7 @@ function decissaoDoReiRight() {
     escolherPersonagem();
     sistemEscolha = 2
     sistemaDialogosAndAcontecimentos(aleatorio)
-    atualizarStatus()
+    
 }
 
 function atualizarStatus(){
@@ -382,7 +383,7 @@ function sistemaDialogosAndAcontecimentos(numero) {
 
             textPers = `Senhor, precisamos construir uma igreja nova.`
             textLeft = `Já não temos o suficiente? (Igreja - ↓↓↓)`
-            textRight = `Sim (Riquesas - ↓↓ ; Igreja - ↑↑↑↑)`
+            textRight  = `Sim (Riquesas - ↓↓ ; Igreja - ↑↑↑↑)`
             atualizarTextosDoDialogue();
 
         
@@ -401,6 +402,7 @@ function sistemaDialogosAndAcontecimentos(numero) {
                 reinado++
 
             }
+            atualizarStatus()
 
         }
         else if (dialogoAleatorio === 2) {
