@@ -1060,16 +1060,14 @@ ${personagemAtual}: OQUE?!`
 }
 
 function verificarSitDeVida(){
-    if(vida){
-
-    }
-    else{
+    if(!vida){
         alert(""+sistemaVerificarSituacao(exercito, igreja, riquesa, povo))
         alert(""+final)
         divGame.style.display = "none";
         document.body.style.backgroundImage = 'url("../diversos/imagens/fundoFimDeJogo.png")';
         botaoRestart.style.display = "block";
         nameGameOverPag.style.display = "block";
+        sizeBtVoltar()
     }
 }
 
@@ -1146,10 +1144,15 @@ function sistemaFalasForMDT(){
             }, 3000)
 
         }
-} //sas
+}
 
 function invisibleStart() {
     imgMDT.style.display = "none"
     falasMDT.style.display = "none"
     nomeMDT.style.display = "none"
+}
+
+function sizeBtVoltar(){
+    botaoVoltarM.style.top = "45%"
+    botaoVoltarM.style.left = "13%"
 }
