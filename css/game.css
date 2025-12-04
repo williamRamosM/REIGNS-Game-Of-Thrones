@@ -176,3 +176,31 @@
     left: 8%;
     display: none;
 }
+
+#dialogoPersonagem {
+    position: fixed;
+    top: 15%;       
+    left: 12%;
+    width: 20%;
+    height: 45%;
+    margin-left: 420px;
+
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+
+    display: none;
+    z-index: 999999;       
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    padding: 20px;
+}
+
+#textoDialogo {
+    color: #ffffff;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+}

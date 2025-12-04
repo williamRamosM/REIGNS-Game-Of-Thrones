@@ -12,18 +12,18 @@ const loadGif = document.getElementById("load")
 
 
 botaoStart.addEventListener("click", () => {
-    somCreditoStart.play();   
+    somCreditoStart.play()
     setTimeout(() => {
-        window.location.href = "html/game.html";  
-    }, 1500);           
-});
+        window.location.href = "html/game.html" 
+    }, 1500)           
+})
 
 botaoCreditos.addEventListener("click", () => {
     somCreditoStart.play();
     setTimeout(() => {
-        window.location.href = "html/creditos.html";
-    }, 1500);
-});
+        window.location.href = "html/creditos.html"
+    }, 1500)
+})
 
 btnStart.addEventListener("click", () => {
 
