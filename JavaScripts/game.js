@@ -908,13 +908,13 @@ function sistemaDialogosAndAcontecimentos(numero) {
         }
         else if (dialogoAleatorio === 3) {
 
-            // alert(`${personagem}: Senhor, um reino vizinho está se fortalecendo, deveríamos atacar eles.`)
-            // sistemEscolha = prompt(`[1] - Sim, precisamos (Exército - diminuirá; Povo - aumentará)
-            //              [2] - Não precisa! Quem teria coragem? (Povo - diminuirá; Exército - aumentará`)
+            // alert(`${personagem}: `)
+            // sistemEscolha = prompt(`[1] -
+            //              [2] -
 
-            textPers = ``
-            textLeft = ``
-            textRight = ``
+            textPers = `Senhor, um reino vizinho está se fortalecendo, deveríamos atacar eles.`
+            textLeft = `Sim, precisamos (Exército - diminuirá; Povo - aumentará)`
+            textRight = `Não precisa! Quem teria coragem? (Povo - diminuirá; Exército - aumentará\`)`
             if (sistemEscolha === 1) {
                 exercito -= 2
                 povo += 2
@@ -931,13 +931,13 @@ function sistemaDialogosAndAcontecimentos(numero) {
         }
         else if (dialogoAleatorio === 4) {
 
-            // alert(`${personagem}: Senhor, a foz do Rio Pingo é perigosa para viajantes. Deveríamos limpar a região.`)
-            // sistemEscolha = prompt(`[1] - Sim (Riquesa - diminuirá; Povo - aumentará bastante)
-            //              [2] - Não (Povo - diminuirá bastante;`)
+            // alert(`${personagem}: `)
+            // sistemEscolha = prompt(`[1] -
+            //              [2] -
 
-            textPers = ``
-            textLeft = ``
-            textRight = ``
+            textPers = `Senhor, a foz do Rio Pingo é perigosa para viajantes. Deveríamos limpar a região.`
+            textLeft = `Sim (Riquesa - diminuirá; Povo - aumentará bastante)`
+            textRight = `Não (Povo - diminuirá bastante)`
 
             if (sistemEscolha === 1) {
 
@@ -955,13 +955,13 @@ function sistemaDialogosAndAcontecimentos(numero) {
         }
         else if (dialogoAleatorio === 5) {
 
-            // alert(`${personagem}: Senhor, a sua esposa é amada pelo povo. Dê poder a ela!`)
-            // sistemEscolha = prompt(`[1] - Sim (Exército - aumenta um pouco; Povo - aumentará)
-            //              [2] - Não (Povo - diminuirá bastante; Exército - diminuirá um pouco; Riquesa - aumenta um pouco`)
+            // alert(`${personagem}: `)
+            // sistemEscolha = prompt(`[1] -
+            //              [2] - `)
 
-            textPers = ``
-            textLeft = ``
-            textRight = ``
+            textPers = `Senhor, a sua esposa é amada pelo povo. Dê poder a ela!`
+            textLeft = `Sim (Exército - aumenta um pouco; Povo - aumentará)`
+            textRight = `Não (Povo - diminuirá bastante; Exército - diminuirá um pouco; Riquesa - aumenta um pouco)`
 
             if (sistemEscolha === 1) {
 
@@ -985,9 +985,13 @@ function sistemaDialogosAndAcontecimentos(numero) {
 
         if (dialogoAleatorio === 1) {
 
-            // alert(`${personagem}: Senhor, cereais estão muito baratos. Deverias ajustar o preço do pão.`)
-            // sistemEscolha = prompt(`[1] - Aumente um pouco. (Riquesas - aumentará)
-            //             [2] - Dobre! (Povo - diminuirá consideravelmente; Riquesas -aumentará estrondosamente)`)
+            // alert(`${personagem}: `)
+            // sistemEscolha = prompt(`[1] -
+            //             [2] - Dobre! `)
+
+            textPers = `Senhor, cereais estão muito baratos. Deverias ajustar o preço do pão.`
+            textLeft = `Sim (Riquesas - aumentará)`
+            textRight = `Nao (Povo - diminuirá consideravelmente; Riquesas -aumentará estrondosamente)`
             if (sistemEscolha === 1) {
                 riquesa += 2
                 ano++
@@ -1003,9 +1007,14 @@ function sistemaDialogosAndAcontecimentos(numero) {
         }
         else if (dialogoAleatorio === 2) {
 
-            // alert(`${personagem}: Senhor, O Rio Pingo está alagando, precisamos da igreja e do exército.`)
-            // sistemEscolha = prompt(`[1] - Sim. (Povo - Aumenta bastante; Riquesa - diminui; igreja - diminui; exercito - diminui)
-            //             [2] - Não. (Povo - diminuirá bastante; Riquesas - aumentará)`)
+            // alert(`${personagem}: `)
+            // sistemEscolha = prompt(`[1] -
+            //             [2] - `)
+
+            textPers = `Senhor, O Rio Pingo está alagando, precisamos da igreja e do exército.`
+            textLeft = `Sim. (Povo - Aumenta bastante; Riquesa - diminui; igreja - diminui; exercito - diminui)`
+            textRight = `Não. (Povo - diminuirá bastante; Riquesas - aumentará)`
+
             if (sistemEscolha === 1) {
                 exercito -= 2
                 igreja -= 2
@@ -1024,28 +1033,36 @@ function sistemaDialogosAndAcontecimentos(numero) {
         }
         else if (dialogoAleatorio === 3) {
 
-            // alert(`${personagem}: Senhor, encontramos minas de ouro devemos cavar mais?`)
-            // sistemEscolha = prompt(`[1] - Sim. (Povo - Diminuirá; Riquesa - Aumentará muito)
-            //             [2] - Não. (Povo - Aumentará; Riquesa - Diminuirá pouco)`)
-            if (sistemEscolha === 1) {
-                povo -= 2
-                riquesa += 3
-                ano++
-                reinado++
+            // alert(`${personagem}: `)
+            // sistemEscolha = prompt(`[1] -
+            //             [2] - `)
 
-            } else if (sistemEscolha === 2) {
+            textPers = `Senhor, encontramos minas de ouro devemos cavar mais?`
+            textLeft = `Sim. (Povo - Diminuirá; Riquesa - Aumentará muito)`
+            textRight = `Não. (Povo - Aumentará; Riquesa - Diminuirá pouco)`
+
+            if (sistemEscolha === 1) {
                 povo += 2
                 riquesa -= 1
                 ano++
                 reinado++
-
+            } else if (sistemEscolha === 2) {
+                povo -= 2
+                riquesa += 3
+                ano++
+                reinado++
             }
         }
         else if (dialogoAleatorio === 4) {
 
-            // alert(`${personagem}: Senhor, a colheita parece estar com algumas pragas como pulgoes, poderia finaciar para acabar com isso?`)
-            // sistemEscolha = prompt(`[1] - Sim. (Povo - Aumenta bastante; Riquesa - diminui; exercito - diminui)
-            //             [2] - Não. (Povo - Diminuirá bastante; )`)
+            // alert(`${personagem}: `)
+            // sistemEscolha = prompt(`[1] -
+            //             [2] - `)
+
+            textPers = `Senhor, a colheita parece estar com algumas pragas como pulgoes, poderia finaciar para acabar com isso?`
+            textLeft = `Sim. (Povo - Aumenta bastante; Riquesa - diminui; exercito - diminui)`
+            textRight = `Não. (Povo - Diminuirá bastante; )`
+
             if (sistemEscolha === 1) {
                 povo += 3
                 riquesa -= 2
@@ -1062,10 +1079,14 @@ function sistemaDialogosAndAcontecimentos(numero) {
         }
         else if (dialogoAleatorio === 5) {
 
-            //         alert(`${personagem}: Senhor, Fomos informados que alguem de um lugar distante chamado RichardMen tentara matar nosso general.
-            // quer faser algo sobre isso?`)
-            //         sistemEscolha = prompt(`[1] - Sim. (Povo - Diminuirá; Riquesa - diminui)
-            //                     [2] - Não. (Povo - Aumentará; Exercito - Diminuirá muito)`)
+            //         alert(`${personagem}: `)
+            //         sistemEscolha = prompt(`[1] -
+            //                     [2] - `)
+
+            textPers = `Senhor, Fomos informados que alguem de um lugar distante chamado RichardMen tentara matar nosso general. Quer faser algo sobre isso?`
+            textLeft = `Sim. (Povo - Diminuirá; Riquesa - diminui)`
+            textRight = `Não. (Povo - Aumentará; Exercito - Diminuirá muito)`
+
             if (sistemEscolha === 1) {
                 povo -= 2
                 riquesa -= 1
@@ -1085,19 +1106,19 @@ function sistemaDialogosAndAcontecimentos(numero) {
     else if (personagem === arrayNum2[6].nome) {
 
         if (igreja < 10 && povo < 10 && exercito < 10 && riquesa < 10) {
-            text = `${personagem}: EU VIM PARA TE LEVAR ${personagemAtual}. Ai meu querido amiguinho, EU VOU ACABAR
+            text = `${arrayNum2[6].nome}: EU VIM PARA TE LEVAR ${digNamePag.value}. Ai meu querido amiguinho, EU VOU ACABAR
            COM VOCÊ BELO REI, si fudeu!
            ${personagemAtual}: OQUE?!`
             vida = `morto`
-            final = final + `${personagemAtual} morreu por uma captura oportunista do diabo.`
+            final = final + `${digNamePag.value} morreu por uma captura oportunista do diabo.`
 
             ano++
             reinado++
         }
         else {
-            text = `${personagem}: Hoje pode ser um dia bom para ti, mas está sendo quase seu funeral ${personagemAtual}.
+            text = `${arrayNum2[6].nome}: Hoje pode ser um dia bom para ti, mas está sendo quase seu funeral ${digNamePag.value}.
           LEMBRE-SE: TU VAI MORRER QUANDO ESTIVER EM UM MOMENTO RUIM, WAHAHAHAHAHAHAHA!
-          ${personagemAtual}: Isso é para ser uma ameaça?`
+          ${digNamePag.value}: Isso é para ser uma ameaça?`
 
             riquesa  -= 2
             povo  -= 2
