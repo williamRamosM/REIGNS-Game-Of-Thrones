@@ -293,6 +293,7 @@ function decissaoDoReiLeft() {
     escolherPersonagem();
     sistemEscolha = 1  
     sistemaDialogosAndAcontecimentos(aleatorio) 
+    atualizarStatus()
     
 }
 
@@ -301,6 +302,7 @@ function decissaoDoReiRight() {
     escolherPersonagem();
     sistemEscolha = 2
     sistemaDialogosAndAcontecimentos(aleatorio)
+    atualizarStatus()
     
 }
 
@@ -405,7 +407,7 @@ function sistemaDialogosAndAcontecimentos(numero) {
                 reinado++
 
             }
-            atualizarStatus()
+            
 
         }
         else if (dialogoAleatorio === 2) {
