@@ -138,7 +138,8 @@ let arrayNum2 = [
     rex,
     conselheiro,
     lula,
-    diabo
+    diabo,
+    espirito
     // portaDupla,
     // porta,
     // salaBau,
@@ -1140,7 +1141,7 @@ function sistemaFalasForMDT(){
             setTimeout(function () {
                 invisibleStart()
                 sistemaDeVerifStart()
-                escolherPersonagem()
+                personagemEscolhido(7)
                 atualizarStatus()
             }, 3000)
 
