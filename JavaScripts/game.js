@@ -180,6 +180,8 @@ let digNamePag = document.getElementById("digName")
 let nomeMDT = document.getElementById("nomeDoMDT")
 let nameGameOverPag = document.getElementById("nameGameOver")
 
+let caixaDialogo = document.getElementById("dialogoPersonagem");
+
 let igreja = 10
 let riquesa = 10
 let exercito = 10
@@ -1153,3 +1155,35 @@ function invisibleStart() {
     falasMDT.style.display = "none"
     nomeMDT.style.display = "none"
 }
+
+
+
+
+fotoP.addEventListener("mouseenter", () => {
+    const texto = sistemaDialogosAndAcontecimentos(aleatorio)
+    caixaDialogo.innerText = "eu sou o personagem do jogo"
+    caixaDialogo.style.display = "block"
+});
+
+fotoP.addEventListener("mouseleave", () => {
+    caixaDialogo.style.display = "none"
+});
+
+botaoLeft.addEventListener("mouseenter", () => {
+    caixaDialogo.innerText = "Não"
+    caixaDialogo.style.display = "block"
+});
+
+botaoLeft.addEventListener("mouseleave", () => {
+    caixaDialogo.style.display = "none"
+});
+
+
+botaoRight.addEventListener("mouseenter", () => {
+    caixaDialogo.innerText = "Sim"
+    caixaDialogo.style.display = "block"
+});
+
+botaoRight.addEventListener("mouseleave", () => {
+    caixaDialogo.style.display = "none"
+});
