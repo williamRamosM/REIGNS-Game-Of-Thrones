@@ -566,7 +566,7 @@ function sistemaDialogosAndAcontecimentos(numero) {
             //     "[2] nao - (exercito - diminuirá pouco; povo - aumentará")
 
             textPers = `Fale meu Rei ${digNamePag.value}.. nossa tropa está com uma vontade de atacar o reino do lado.. poderia conceder?`
-            textLeft = `sim - (exercito - ↓↓; riquesa -  ↑)`
+            textLeft = `sim - (exercito - ↓↓↓; riquesa -  ↑)`
             textRight = `Não - (exercito - ↓; povo - ↑↑")`
             atualizarTextosDoDialogue()
 
@@ -654,16 +654,16 @@ function sistemaDialogosAndAcontecimentos(numero) {
             textRight = `Não (Povo - ↓↓; Igreja - ↓↓)`
 
             if (sistemEscolha === 1) {
-                povo -= 2
-                igreja -= 2
-                ano++
-                reinado++
-                fecharAcont = 1
 
-            } else if (sistemEscolha === 2) {
                 povo += 2
                 igreja += 2
                 riquesa -= 3
+                ano++
+                reinado++
+                fecharAcont = 1
+            } else if (sistemEscolha === 2) {
+                povo -= 2
+                igreja -= 2
                 ano++
                 reinado++
                 fecharAcont = 1
@@ -1042,13 +1042,14 @@ function sistemaDialogosAndAcontecimentos(numero) {
             textRight = `Não. (Povo - Aumentará; Riquesa - Diminuirá pouco)`
 
             if (sistemEscolha === 1) {
-                povo += 2
-                riquesa -= 1
+
+                povo -= 2
+                riquesa += 3
                 ano++
                 reinado++
             } else if (sistemEscolha === 2) {
-                povo -= 2
-                riquesa += 3
+                povo += 2
+                riquesa -= 1
                 ano++
                 reinado++
             }
