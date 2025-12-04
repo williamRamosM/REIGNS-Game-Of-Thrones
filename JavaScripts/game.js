@@ -321,9 +321,12 @@ function atualizarStatus(){
     sistemaVerificarSituacao(exercito, igreja, riquesa, povo)
     verificarSitDeVida()
 }
+
+textPers = `Venho pela essa menssagem te disser que cuidar do reino é algo desafiador até para os mais experientes!`
+textLeft = `Sim - Verdade isso é umpouco dificil mesmo...`
+textRight = `Nao - Mentira isso é muito facil!`
+
 function atualizarTextosDoDialogue() {
-    // A caixa vai atualizar automaticamente quando o usuário passar o mouse
-    // Então não exibimos nada aqui diretamente.
     console.log("textPers =", textPers);
     console.log("textLeft =", textLeft);
     console.log("textRight =", textRight);
@@ -1339,7 +1342,7 @@ function sistemaFalasForMDT(){
             setTimeout(function () {
                 invisibleStart()
                 sistemaDeVerifStart()
-                escolherPersonagem()
+                personagemEscolhido(7)
                 atualizarStatus()
             }, 3000)
 
