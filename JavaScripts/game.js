@@ -314,7 +314,7 @@ function atualizarStatus(){
 
 function sistemaDialogosAndAcontecimentos(numero) {
     let personagem = arrayNum2[numero]
-    let personagemAtual = nomeReiPag.innerText
+    personagemAtual = arrayNum2[numero]
     let text = ""
     const dialogoAleatorio = Math.floor(Math.random()*5)
 
@@ -943,46 +943,47 @@ function sistemaDialogosAndAcontecimentos(numero) {
 
 function sistemaVerificarSituacao(exercito, igreja, riquesa, povo ){
     let text = ""
-
+    personagemAtual = ""
+    personagemAtual = digNamePag.value
     if(exercito <= 0){
-        text = text+`${arrayNum2[2]}: Nosso exército está muito fraco ${personagemAtual},
+        text = text+`${arrayNum2[1].nome}: Nosso exército está muito fraco ${personagemAtual},
     o exército francês soube da nossa situção e veio nos conquistar.
     ESTAMOS MORTOS!
     ${personagemAtual}: OQUE?!`
-        final = final+`${personagemAtual} morreu por invasão.`
+        final = `${personagemAtual} morreu por invasão.`
         vida = false
     }
     else if(exercito >= 20){
-        text = text+`${arrayNum2[2]}: Estamos em uma situação peculiar senhor
+        text = text+`${arrayNum2[1].nome}: Estamos em uma situação peculiar senhor
   ${personagemAtual}, acho que o seu reinado não está muito bom, mesmo que o
   exército esteja poderoso. Eu vou fazer uma mudança nessa reino, graças aos
   investimentos que tu fez em meus homens. Foi bom ser seu general,
   bom até agora
   ${personagemAtual}: OQUE?!`
 
-        final = final+`${personagemAtual} morreu por golpe do exército`
+        final = `${personagemAtual} morreu por golpe do exército`
         vida = false
     }
     else if(igreja <= 0){
-        text = text+`${arrayNum2[1]}: ${personagemAtual}! COMO OUSA DESRESPEITARMOS?!
+        text = text+`${arrayNum2[0].nome}: ${personagemAtual}! COMO OUSA DESRESPEITARMOS?!
     O DIABO VIRÁ ATRÁS DE NÓS POR CULPA SUA, SE NÃO AGIRMOS RÁPIDO!
     TU VAI QUEIMAR PELO BEM DE NOSSO REINO E DEUS, QUEIME NO INFERNO!
     ${personagemAtual}: OQUE?!`
-        final = final+`${personagemAtual} morreu por desespero da igreja em se proteger de alguém se importava com a ameaça do diabo`
+        final = `${personagemAtual} morreu por desespero da igreja em se proteger de alguém se importava com a ameaça do diabo`
         vida = false
     }
     else if(igreja >= 20){
-        text = text+`${arrayNum2[1]}: ${personagemAtual}. Nossa religião prevaleceu muito,
+        text = text+`${arrayNum2[0].nome}: ${personagemAtual}. Nossa religião prevaleceu muito,
     agradeço pela sua colaboração, mas tu não é puro, sei de muitas
     coisas que fez reinando e até antes de reinar. Eu me declaro novo
     chefe do reino por enquanto, e irei colocar um novo rei, só que puro.
     ${personagemAtual}: OQUE?!`
-        final = final+`${personagemAtual} morreu por dominância da igreja, os fazendo querer transformar o clero na predominância`
+        final = `${personagemAtual} morreu por dominância da igreja, os fazendo querer transformar o clero na predominância`
         vida = false
     }
 
     else if(riquesa <= 0){
-        text = text+`${arrayNum2[7]}: — Majestade… ou melhor, antigo senhor destas terras… Hoje não venho pedir, venho falar a verdade que o povo sussurra nas feiras e nos campos. O reino está morrendo. E não foi pela seca, nem pela praga, nem pelo inimigo estrangeiro. Foi pelo seu comando.
+        text = text+`${arrayNum2[5].nome}: — Majestade… ou melhor, antigo senhor destas terras… Hoje não venho pedir, venho falar a verdade que o povo sussurra nas feiras e nos campos. O reino está morrendo. E não foi pela seca, nem pela praga, nem pelo inimigo estrangeiro. Foi pelo seu comando.
 
 Enquanto o povo pobre passava fome e frio, vosmecê mandava os guardas baterem às portas de madrugada, levando homens, mulheres e até jovens sem crime provado. Chamava isso de “ordem”, mas era apenas medo disfarçado. E medo não enche barriga, não educa criança, não cura doença.
 
@@ -994,12 +995,12 @@ Hoje, o campo inteiro se junta nesta praça. Não viemos para coroá-lo, mas par
 
 Assim, por tamanho erro e por tamanha tirania, vosmecê será enforcado, para que sirva de lição a todos os que um dia pensarem que o poder é mais importante que o povo. Que o seu fim seja o aviso: nenhum rei é maior que a justiça.
 ${personagemAtual}: OQUE?!`
-        final = final+`${personagemAtual} morreu por revolução que o povo fez devido a crise financeira do reino`
+        final = `${personagemAtual} morreu por revolução que o povo fez devido a crise financeira do reino`
         vida = false
     }
 
     else if(riquesa >= 20){
-        text = text+`${arrayNum2[7]}: — Majestade… ou devo chamá-lo de colecionador de moedas alheias?
+        text = text+`${arrayNum2[5].nome}: — Majestade… ou devo chamá-lo de colecionador de moedas alheias?
 
 Durante anos, vosmecê discursou sobre honra, transparência e lealdade ao reino. Nós acreditamos. Nós marchamos ao seu lado nas festas, batemos palmas nos discursos e até defendemos seu nome nas tavernas.
 
@@ -1013,11 +1014,11 @@ Hoje o julgamento é público, e a sentença, irrevogável. Não é só o ouro q
 
 A forca está erguida, o carrasco espera. Que o último som que ouça não seja o tilintar das moedas, mas o eco das vozes que um dia acreditaram no senhor. Pois a justiça não mede riqueza — mede caráter, e o seu foi vendido pelo peso do ouro.
 ${personagemAtual}: OQUE?!`
-        final = final+`${personagemAtual} morreu por invasão do povo por acumular riquesas`
+        final = `${personagemAtual} morreu por invasão do povo por acumular riquesas`
         vida = false
     }
     else if(povo <= 0){
-        text = text+`${arrayNum2[7]}: — Majestade… ou devo chamá-lo de colecionador de moedas alheias?
+        text = text+`${arrayNum2[5].nome}: — Majestade… ou devo chamá-lo de colecionador de moedas alheias?
 
 Durante anos, vosmecê discursou sobre honra, transparência e lealdade ao reino. Nós acreditamos. Nós marchamos ao seu lado nas festas, batemos palmas nos discursos e até defendemos seu nome nas tavernas.
 
@@ -1031,12 +1032,12 @@ Hoje o julgamento é público, e a sentença, irrevogável. Não é só o ouro q
 
 A forca está erguida, o carrasco espera. Que o último som que ouça não seja o tilintar das moedas, mas o eco das vozes que um dia acreditaram no senhor. Pois a justiça não mede riqueza — mede caráter, e o seu foi vendido pelo peso do ouro.
 ${personagemAtual}: OQUE?!`
-        final = final+`${personagemAtual} morreu por raiva do povo em relação a confiança com ele`
+        final = `${personagemAtual} morreu por raiva do povo em relação a confiança com ele`
         vida = false
     }
     else if (povo >= 20){
 
-        text = text+`${arrayNum2[7]}: — Majestade… até ontem, se alguém ousasse levantar um dedo contra o senhor, seria chamado de louco. O povo o amava, o reverenciava, acreditava que sua palavra era lei e seu coração, puro.
+        text = text+`${arrayNum2[5].nome}: — Majestade… até ontem, se alguém ousasse levantar um dedo contra o senhor, seria chamado de louco. O povo o amava, o reverenciava, acreditava que sua palavra era lei e seu coração, puro.
 
 E por um tempo, eu também acreditei. Eu o vi sorrir nas festas, caminhar entre os camponeses, abraçar crianças, prometer dias melhores. O senhor construiu a imagem perfeita: um rei que não se afasta do seu povo.
 
@@ -1052,7 +1053,7 @@ O povo que lhe entregou o coração agora exige sua cabeça. A praça está chei
 
 A coroa não cairá no chão; ela será arrancada com as próprias mãos daqueles que a sustentaram. E quando o carrasco puxar a corda, não será apenas o seu corpo que cairá… mas o mito que o senhor construiu.
 ${personagemAtual}: OQUE?!`
-        final = final+`${personagemAtual} morreu por invasão do povo por supostamente criar uma imagem de santo`
+        final = `${personagemAtual} morreu por invasão do povo por supostamente criar uma imagem de santo`
         vida = false
     }
 
@@ -1062,7 +1063,7 @@ ${personagemAtual}: OQUE?!`
 function verificarSitDeVida(){
     if(!vida){
         alert(""+sistemaVerificarSituacao(exercito, igreja, riquesa, povo))
-        alert(""+final)
+        alert(final)
         divGame.style.display = "none";
         document.body.style.backgroundImage = 'url("../diversos/imagens/fundoFimDeJogo.png")';
         botaoRestart.style.display = "block";
