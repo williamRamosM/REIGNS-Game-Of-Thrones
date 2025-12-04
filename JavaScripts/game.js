@@ -314,6 +314,36 @@ function atualizarStatus(){
     verificarSitDeVida()
 }
 
+// Eventos de mouse por cima e quando sai.
+fotoP.addEventListener("mouseenter", () => {
+    const texto = sistemaDialogosAndAcontecimentos(aleatorio)
+    caixaDialogo.innerText = "eu sou o personagem do jogo"
+    caixaDialogo.style.display = "block"
+});
+
+fotoP.addEventListener("mouseleave", () => {
+    caixaDialogo.style.display = "none"
+});
+
+botaoLeft.addEventListener("mouseenter", () => {
+    caixaDialogo.innerText = "Não"
+    caixaDialogo.style.display = "block"
+});
+
+botaoLeft.addEventListener("mouseleave", () => {
+    caixaDialogo.style.display = "none"
+});
+
+
+botaoRight.addEventListener("mouseenter", () => {
+    caixaDialogo.innerText = "Sim"
+    caixaDialogo.style.display = "block"
+});
+
+botaoRight.addEventListener("mouseleave", () => {
+    caixaDialogo.style.display = "none"
+});
+
 function sistemaDialogosAndAcontecimentos(numero) {
     let personagem = arrayNum2[numero]
     let personagemAtual = nomeReiPag.innerText
@@ -1075,6 +1105,7 @@ function verificarSitDeVida(){
     }
 }
 
+
 //-------------------------Local do start-----------------------------
 
 function sistemaDeVerifStart(){
@@ -1159,31 +1190,3 @@ function invisibleStart() {
 
 
 
-fotoP.addEventListener("mouseenter", () => {
-    const texto = sistemaDialogosAndAcontecimentos(aleatorio)
-    caixaDialogo.innerText = "eu sou o personagem do jogo"
-    caixaDialogo.style.display = "block"
-});
-
-fotoP.addEventListener("mouseleave", () => {
-    caixaDialogo.style.display = "none"
-});
-
-botaoLeft.addEventListener("mouseenter", () => {
-    caixaDialogo.innerText = "Não"
-    caixaDialogo.style.display = "block"
-});
-
-botaoLeft.addEventListener("mouseleave", () => {
-    caixaDialogo.style.display = "none"
-});
-
-
-botaoRight.addEventListener("mouseenter", () => {
-    caixaDialogo.innerText = "Sim"
-    caixaDialogo.style.display = "block"
-});
-
-botaoRight.addEventListener("mouseleave", () => {
-    caixaDialogo.style.display = "none"
-});
