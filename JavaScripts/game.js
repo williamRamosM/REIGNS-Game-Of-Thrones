@@ -1272,6 +1272,7 @@ function verificarSitDeVida(){
         document.body.style.backgroundImage = 'url("../diversos/imagens/fundoFimDeJogo.png")';
         botaoRestart.style.display = "block";
         nameGameOverPag.style.display = "block";
+        sizeBtVoltar()
     }
 }
 
@@ -1357,6 +1358,9 @@ function invisibleStart() {
     nomeMDT.style.display = "none"
 }
 
-
+function sizeBtVoltar(){
+    botaoVoltarM.style.top = "45%"
+    botaoVoltarM.style.left = "13%"
+}
 
 
